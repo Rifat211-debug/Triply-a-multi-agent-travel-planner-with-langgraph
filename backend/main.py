@@ -8,7 +8,6 @@ from dotenv import load_dotenv
 from langgraph.checkpoint.postgres import PostgresSaver
 from langchain_core.messages import HumanMessage
 
-from integrations.llm.groq import llm
 from backend.config import get_database_url
 from backend.agents import graph
 
@@ -56,7 +55,7 @@ def run_travel_agent(user_input: str, thread_id: str | None = None):
         config = config
     ) 
     
-    final_answer = result["message"][-1].content
+    final_answer = result["messages"][-1].content
     
     return {
         "thread_id": thread_id,

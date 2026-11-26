@@ -8,7 +8,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 
-from main import run_travel_agent
+from backend.main import run_travel_agent
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -31,7 +31,7 @@ class TravelRequest(BaseModel):
     thread_id: str | None = None
 
 
-@app.get("/", responses = HTMLResponse)
+@app.get("/", response_class = HTMLResponse)
 async def home(request: Request):
     return templates.TemplateResponse(
         request = request,
