@@ -1,0 +1,25 @@
+# Virtual environments
+.venv/
+triply/
+venv/
+env/
+
+# Git
+.git/
+.gitignore
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment variables
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
